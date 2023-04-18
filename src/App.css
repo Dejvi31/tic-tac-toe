@@ -18,7 +18,7 @@
   content: '';
   display: table;
 }
-.square {
+.boxes {
   background: #fff;
   border: 1px solid #999;
   float: left;
@@ -32,6 +32,10 @@
   text-align: center;
   width: 7rem;
 }
+.boxes-winning {
+  background: rgb(218, 18, 18);
+  color: #fff;
+}
 .status {
   margin-bottom: 10px;
   display: flex;
@@ -43,21 +47,37 @@
   flex-direction: row;
 }
 
-.game-info {
+.form-box {
   display: flex;
+  align-items: center;
   justify-content: center;
-  margin-left: 2rem;
-  margin-top: 2.5rem;
+  margin: 1rem;
 }
-
-li{
-  font-size: 1.2rem;
+input[type=text] {
+  width: 60%;
+  padding: 12px 15px;
+  margin: 0.2rem;
+  box-sizing: border-box;
 }
-.btn {
+.btn-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.start-game{
+  padding: 5px 10px;
+  font-size: 1rem;
+  color: white;
+  background-color: forestgreen;
   border: none;
-  background-color: white;
-  text-decoration: underline;
-  font-size: 1.2rem;
+  cursor: pointer;
+}
+.restart {
+  padding: 5px 10px;
+  font-size: 1rem;
+  color: white;
+  background-color: forestgreen;
+  border: none;
   cursor: pointer;
 }
 
@@ -79,3 +99,6 @@ li{
     width: 4rem;
   }
 }
+
+
+
