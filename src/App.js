@@ -70,20 +70,26 @@ function App() {
               <input type="text" value={p2Name} onChange={(e) => setP2Name(e.target.value)} />
             </label>
           </form>
+          <div className='btn-box'>
           <button className='start-game' onClick={() => setNamesEntered(true)}>Start Game</button>
+          </div>
         </div>
       );
     } else if (winner) {
-      status = <h1 style={{marginBottom: '5px'}}>Winner: {winner.player === 'X' ? p1Name : p2Name}</h1>;
+      status = <div className='status'>Winner: {winner.player === 'X' ? p1Name : p2Name}</div>;
     } else if (board.every((square) => square != null)) {
-      status = <h1 style={{marginBottom: '5px'}}>Draw!</h1>;
+      status = <div className='status'>Draw!</div>;
     } else {
-      status = <h1 style={{marginBottom: '5px'}}>Next player: {currentPlayerName}</h1>;
+      status = <div className='status'>Next player: {currentPlayerName}</div>;
     }
 
 
   return (
+    <>
     <div className='container'>
+    <div className='game-title'>
+      <h1>Tic-Tac-Toe</h1>
+    </div>
     <div className='game'>
       <div className='board'>
         {status}
@@ -110,7 +116,9 @@ function App() {
     </div>
     {gameOver && renderRestartButton()}
   </div>
+  </>
   );
+  
 }
 
 function calculateWinner(board) {
